@@ -7,8 +7,8 @@ trigger:
 - master
 
 pool:
-  Name: 'Default'
-  vmImage: 'PAVILLION'
+  Name: 'Self-Hosted'
+  vmImage: 'AgentVM'
 
 variables:
   solution: '**/*.sln'
