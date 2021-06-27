@@ -9,8 +9,6 @@ trigger:
 pool:
   vmImage: 'windows-latest'
 
-variables:
-	- group: variable group
 
 
   - task: AzureCLI@2
