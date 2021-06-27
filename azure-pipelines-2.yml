@@ -28,4 +28,4 @@ steps:
     azureSubscription: 'Development Group - Free Trial (4e262c8d-f69c-4b8b-8ab5-1a1ca3bdb6ce)'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
-    inlineScript: 'az vm create --resource-group Rg3-Linux --name demovm3 --image win2016datacenter --admin-username Adminuser --admin-password $(vmpassword)'
+    inlineScript: 'az vm create --resource-group rg3-Linux --name demovm3 --image win2016datacenter --admin-username Adminuser --admin-password $(vmpassword)'
