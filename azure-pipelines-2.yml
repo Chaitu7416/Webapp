@@ -7,17 +7,15 @@ trigger:
 - master
 
 pool:
-  vmImage: 'windows-latest'
+  vmImage: 'ubuntu-latest'
 
 variables:
-- group: demogroup
-  solution: '**/*.sln'
-  buildPlatform: 'Any CPU'
-  buildConfiguration: 'Release'
-
+- group: variable group
+stages:
+- stage: demostage
+  jobs:
+  - job: Test
 steps:
-
-
   - task: AzureCLI@2
     inputs:
       azureSubscription: 'Development Group - Free Trial (4e262c8d-f69c-4b8b-8ab5-1a1ca3bdb6ce)'
