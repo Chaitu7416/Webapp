@@ -15,7 +15,7 @@ stages:
 - stage: demostage
   jobs:
   - job: Test
-steps:
+    steps:
   - task: AzureCLI@2
     inputs:
       azureSubscription: 'Development Group - Free Trial (4e262c8d-f69c-4b8b-8ab5-1a1ca3bdb6ce)'
