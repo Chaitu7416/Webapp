@@ -1,8 +1,4 @@
-Lab - Azure Pipelines - Variable Groups - Azure Key Vault - Resources
-Lab - Azure Pipelines - Variable Groups - Azure Key Vault - Resources
-You can use the following information as a reference for the previous chapter.
 
-1. You can use the following YAML file for your build pipeline as a reference
 
 # Docker
 # Build and push an image to Azure Container Registry
