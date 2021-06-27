@@ -1,0 +1,29 @@
+Lab - Azure Pipelines - Variable Groups - Azure Key Vault - Resources
+Lab - Azure Pipelines - Variable Groups - Azure Key Vault - Resources
+You can use the following information as a reference for the previous chapter.
+
+1. You can use the following YAML file for your build pipeline as a reference
+
+# Docker
+# Build and push an image to Azure Container Registry
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+ 
+trigger:
+- master
+ 
+pool:
+  vmImage: 'ubuntu-latest'
+ 
+variables:
+- group: variable group
+stages:
+- stage: demostage
+  jobs:
+  - job: Test
+    steps:
+    - task: AzureCLI@2
+      inputs:
+        azureSubscription: 'Development Group - Free Trial (4e262c8d-f69c-4b8b-8ab5-1a1ca3bdb6ce)'
+        scriptType: 'bash'
+        scriptLocation: 'inlineScript'
+        inlineScript: 'az vm create --resource-group newgrp1 --name demovm3 --image win2016datacenter --admin-username demousr --admin-password $(vmpassword)'
