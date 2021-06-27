@@ -16,16 +16,17 @@ stages:
   jobs:
   - job: Test
     steps:
-  - task: AzureCLI@2
-    inputs:
-      azureSubscription: 'Development Group - Free Trial (4e262c8d-f69c-4b8b-8ab5-1a1ca3bdb6ce)'
-      scriptType: 'bash'
-      scriptLocation: 'inlineScript'
-      inlineScript: 'az group create -l westus -n rg3-linux --subscription 4e262c8d-f69c-4b8b-8ab5-1a1ca3bdb6ce'
 
-  - task: AzureCLI@2
-    inputs:
-      azureSubscription: 'Development Group - Free Trial (4e262c8d-f69c-4b8b-8ab5-1a1ca3bdb6ce)'
-      scriptType: 'bash'
-      scriptLocation: 'inlineScript'
-      inlineScript: 'az vm create --resource-group rg3-Linux --name demovm3 --image win2016datacenter --admin-username Adminuser --admin-password $(vmpassword)'
+    - task: AzureCLI@2
+      inputs:
+        azureSubscription: 'Development Group - Free Trial (4e262c8d-f69c-4b8b-8ab5-1a1ca3bdb6ce)'
+        scriptType: 'bash'
+        scriptLocation: 'inlineScript'
+        inlineScript: 'az group create -l westus -n rg3-linux --subscription 4e262c8d-f69c-4b8b-8ab5-1a1ca3bdb6ce'
+
+    - task: AzureCLI@2
+      inputs:
+        azureSubscription: 'Development Group - Free Trial (4e262c8d-f69c-4b8b-8ab5-1a1ca3bdb6ce)'
+        scriptType: 'bash'
+        scriptLocation: 'inlineScript'
+        inlineScript: 'az vm create --resource-group rg3-Linux --name demovm3 --image win2016datacenter --admin-username Adminuser --admin-password $(vmpassword)'
